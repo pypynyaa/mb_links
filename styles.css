@@ -191,6 +191,20 @@ h1 {
   border-color: var(--border-strong);
 }
 
+.link-card:hover .arrow,
+.link-card:active .arrow {
+  border-color: rgba(255,255,255,0.24);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.14),
+      rgba(255,255,255,0.05)
+    );
+
+  transform: translateX(2px);
+}
+
 @media (hover: hover) {
   .link-card:hover {
     background: var(--card-hover);
@@ -267,20 +281,38 @@ h1 {
 
 .arrow {
   flex-shrink: 0;
-  width: 34px;
-  height: 34px;
-  min-width: 34px;
-  min-height: 34px;
 
   display: grid;
   place-items: center;
 
-  border: 1px solid var(--border);
+  width: 36px;
+  height: 36px;
+
+  min-width: 36px;
+  min-height: 36px;
+
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: 999px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.03)
+    );
+
+  backdrop-filter: blur(8px);
+
+  color: rgba(255,255,255,0.92);
+
+  font-size: 14px;
+  font-weight: 900;
 
   aspect-ratio: 1 / 1;
 
-  font-size: 15px;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
 }
 
 .page--transition {
@@ -289,22 +321,29 @@ h1 {
 }
 
 .transition-card {
-  display: grid;
-  gap: clamp(12px, 2dvh, 18px);
-  align-content: start;
-  min-height: 0;
-  height: auto;
-  overflow: hidden;
-  padding: clamp(16px, 4.8vw, 24px);
-  border: 1px solid var(--border);
-  border-radius: clamp(18px, 6vw, 25px);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.105), rgba(255, 255, 255, 0.045)), var(--panel);
+  display: flex;
+  flex-direction: column;
+
   width: 100%;
   max-height: calc(100dvh - 24px);
 
   overflow-y: auto;
 
-  padding-bottom: max(18px, env(safe-area-inset-bottom));
+  padding: clamp(16px, 4.8vw, 24px);
+
+  border: 1px solid var(--border);
+
+  border-radius: clamp(18px, 6vw, 25px);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.105),
+      rgba(255,255,255,0.045)
+    ),
+    var(--panel);
+
+  gap: 16px;
 }
 
 .transition-card .logo {
@@ -349,30 +388,41 @@ h1 {
   bottom: 0;
 
   padding-top: 10px;
+  display: grid;
+  gap: 12px;
 
-  background:
-    linear-gradient(
-      to top,
-      rgba(21,21,22,1),
-      rgba(21,21,22,0.92),
-      transparent
-    );
+  margin-top: auto;
+
+  padding-top: 8px;
 }
 
 .transition-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: clamp(42px, 7dvh, 52px);
-  padding: 10px 14px;
-  border: 1px solid var(--border-strong);
-  border-radius: 999px;
+
+  min-height: 52px;
+
+  padding: 14px 18px;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(255,255,255,0.12);
+
   background: #fff;
+
   color: #000;
-  font-size: clamp(11.5px, 3.2vw, 13.5px);
+
+  font-size: 13px;
   font-weight: 900;
+  letter-spacing: 0.02em;
+
   text-align: center;
   text-decoration: none;
+
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
 }
 
 .transition-link--secondary {
