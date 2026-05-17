@@ -281,37 +281,27 @@ h1 {
 
 .arrow {
   flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
-  min-width: 34px;
-  min-height: 34px;
-  border: 1.5px solid rgba(255, 255, 255, 0.18);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(10px);
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 15px;
-  font-weight: 800;
-  line-height: 1;
-  transition: all 180ms cubic-bezier(0.23, 1, 0.32, 1);
-  -webkit-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
+  font-size: 17px;
+  color: rgba(255,255,255,0.95);
+  font-weight: 900;
+  -webkit-transform: translateZ(0);
 }
 
-/* Улучшенная стрелка через ::after — надёжнее чем текст */
-.arrow::after {
-  content: "→";
-  display: block;
-  line-height: 1;
-  transition: transform 180ms ease;
+/* Активное нажатие */
+.link-card:active .arrow {
+  transform: scale(0.92);
 }
 
 .link-card:active .arrow::after {
-  transform: scale(1.15) translateX(2px);
+  transform: translateX(3px) scale(1.1);
 }
 
 .page--transition {
