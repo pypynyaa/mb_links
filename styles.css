@@ -281,38 +281,37 @@ h1 {
 
 .arrow {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  min-height: 34px;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1;
+  transition: all 180ms cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
 
-  display: grid;
-  place-items: center;
+/* Улучшенная стрелка через ::after — надёжнее чем текст */
+.arrow::after {
+  content: "→";
+  display: block;
+  line-height: 1;
+  transition: transform 180ms ease;
+}
 
-  width: 36px;
-  height: 36px;
-
-  min-width: 36px;
-  min-height: 36px;
-
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 999px;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0.08),
-      rgba(255,255,255,0.03)
-    );
-
-  backdrop-filter: blur(8px);
-
-  color: rgba(255,255,255,0.92);
-
-  font-size: 14px;
-  font-weight: 900;
-
-  aspect-ratio: 1 / 1;
-
-  transition:
-    transform 160ms ease,
-    border-color 160ms ease,
+.link-card:active .arrow::after {
+  transform: scale(1.15) translateX(2px);
 }
 
 .page--transition {
