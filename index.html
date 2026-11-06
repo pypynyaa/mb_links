@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#050505">
+    <meta name="theme-color" content="#11141b">
     <meta
       name="description"
           content="ITMO MEGABATTLE: официальные площадки проекта, анонсы, видео и сообщество."
@@ -17,46 +17,53 @@
   </head>
   <body>
     <main class="page" aria-label="ITMO MEGABATTLE links">
-      <section class="hero" aria-labelledby="page-title">
+      <div class="cover">
         <img class="logo" src="./assets/logo.png" width="720" height="720" alt="ITMO MEGABATTLE">
+      </div>
+
+      <div class="links-panel">
+      <section class="hero" aria-labelledby="page-title">
 
         <div class="hero-copy">
-          <p class="kicker">ITMO MEGABATTLE</p>
-          <h1 id="page-title">ССЫЛКИ</h1>
+          <h1 id="page-title">ITMO MEGABATTLE</h1>
+          <p class="subtitle">Все наши площадки</p>
         </div>
+        <button class="share-button" type="button" aria-label="Поделиться ссылкой">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></svg>
+        </button>
       </section>
 
       <section class="links" aria-label="Официальные площадки">
         <a class="link-card" href="https://t.me/itmomegabattle" target="_blank" rel="noreferrer">
           <span class="icon-shell"><img src="./assets/telegram.svg" alt=""></span>
           <span class="link-copy">
-            <strong>TELEGRAM</strong>
+            <strong>Telegram</strong>
           </span>
-          <span class="arrow" aria-hidden="true">></span>
+          <span class="link-action" aria-hidden="true">Открыть</span>
         </a>
 
         <a class="link-card" href="https://www.tiktok.com/@itmo_megabattle" target="_blank" rel="noreferrer">
           <span class="icon-shell"><img src="./assets/tiktok.svg" alt=""></span>
           <span class="link-copy">
-            <strong>TIKTOK</strong>
+            <strong>TikTok</strong>
           </span>
-          <span class="arrow" aria-hidden="true">></span>
+          <span class="link-action" aria-hidden="true">Открыть</span>
         </a>
 
         <a class="link-card" href="https://www.youtube.com/@itmomegabattle" target="_blank" rel="noreferrer">
           <span class="icon-shell"><img src="./assets/youtube.svg" alt=""></span>
           <span class="link-copy">
-            <strong>YOUTUBE</strong>
+            <strong>YouTube</strong>
           </span>
-          <span class="arrow" aria-hidden="true">></span>
+          <span class="link-action" aria-hidden="true">Открыть</span>
         </a>
 
         <a class="link-card" href="https://rutube.ru/channel/78402593/" target="_blank" rel="noreferrer">
           <span class="icon-shell"><img src="./assets/rutube.svg" alt=""></span>
           <span class="link-copy">
-            <strong>RUTUBE</strong>
+            <strong>Rutube</strong>
           </span>
-          <span class="arrow" aria-hidden="true">></span>
+          <span class="link-action" aria-hidden="true">Открыть</span>
         </a>
 
         <a class="link-card" href="https://vk.ru/itmomegabattle" target="_blank" rel="noreferrer">
@@ -64,7 +71,7 @@
           <span class="link-copy">
             <strong>VK</strong>
           </span>
-          <span class="arrow" aria-hidden="true">></span>
+          <span class="link-action" aria-hidden="true">Открыть</span>
         </a>
 
         <a class="link-card link-card--muted" href="./instagram.html">
@@ -73,10 +80,20 @@
             <strong>META*</strong>
             <small>соцсеть Meta*</small>
           </span>
-          <span class="arrow" aria-hidden="true">></span>
+          <span class="link-action" aria-hidden="true">Подробнее</span>
         </a>
       </section>
+      <footer class="footer">ITMO MEGABATTLE · Официальные ссылки</footer>
+      </div>
     </main>
+    <p class="share-status" role="status" aria-live="polite"></p>
+    <dialog class="share-dialog" aria-labelledby="share-title">
+      <form method="dialog"><button class="dialog-close" aria-label="Закрыть">×</button></form>
+      <h2 id="share-title">Поделиться</h2>
+      <p>Скопируйте ссылку на наши площадки</p>
+      <input class="share-url" aria-label="Ссылка на страницу" readonly>
+      <button class="copy-button" type="button">Скопировать ссылку</button>
+    </dialog>
 
     <script src="./script.js" type="module"></script>
   </body>
